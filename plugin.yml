@@ -1,16 +1,17 @@
-name: vendeur
-version: 1.0.0
+name: seller
+version: 1.0.1
 description: Seller du spawn
 author: Amosar
 depend: [Vault, Citizens]
+Loadbefore: [Vault, Citizens]
 
-main: com.trafalcraft.vendeur.Main
+main: com.trafalcraft.seller.Main
 
 commands:
-   vendeur:
+   seller:
      description: Base command for the vendeur plugin.
-     aliases: [seller]
-     permission: vendeur.admin
-     permission-message: '§4ERROR §9§l> §r§bYou dont have permission to do that!'
+     aliases: [vendeur]
+     permission: seller.admin
+     permission-message: '§4ERROR §9§l> §r§bYou don''t have permission to do that!'
 permissions:
-  vendeur.admin: {default: op}
+  seller.admin: {default: op}

@@ -1,12 +1,14 @@
+version: 0.1
 Complement:
   seller_name: "Seller"
-  money: "coins"
 Msg:
   default:
     prefix: "&9[&3r-Seller&9]> &2"
     error: "&9[&4tr-Seller&9]> &c"
-    no_permission: "&4ERROR &9&l> &r&bYou dont have permission to do that!"
+    no_permission: "&4ERROR &9&l> &r&bYou don''t have permission to do that!"
     command_use: "&9[&4tr-Seller&9]> &r&cCommand use: &6$command"
+  sellerInteract:
+    noShop: "The seller have a problem or is closed"
   sellerInventory:
     buy_price: "Buying price"
     seller_price: "Selling price"
@@ -15,15 +17,17 @@ Msg:
     shift_click: "Shift+click"
     buy_item: "buy $nbr items"
     leave_the_shop: "Leave the shop"
+    buy_unavailable_inventory: "&3You can't buy this item"
+    sell_unavailable_inventory: "&3You can't sell this item"
   transaction:
     success_buy:
       - "&a===================================================="
-      - "&3You spend &6$moneySpent $moneyType for &6$amountItem $itemType"
+      - "&3You spend &6$moneySpent for &6$amountItem $itemType"
       - "&3You have now $currentMoney"
       - "&a===================================================="
-    failure_buy_no_enought_money:
+    failure_buy_no_enough_money:
       - "&a===================================================="
-      - "&3You don't have enough, You need&6 $moneyMissing $moneyType more"
+      - "&3You don't have enough, You need&6 $moneyMissing more"
       - "&3for $amount of &6$itemType"
       - "&a===================================================="
     buy_unavailable:
@@ -32,7 +36,7 @@ Msg:
       - "&a===================================================="
     success_sell:
       - "&a===================================================="
-      - "&3You have earned &6$moneySpent $moneyType for &6$amountItem $itemType"
+      - "&3You have earned &6$moneySpent for &6$amountItem $itemType"
       - "&3You have now $currentMoney"
       - "&a===================================================="
     failure_sell_no_item:
@@ -45,12 +49,13 @@ Msg:
       - "&a===================================================="
       
 #exemple shop
+version: '0.1'
 item:
   name:
     1:
       type: DIAMOND
       data: 0
-      Displayname: "Diamond"
+      DisplayName: "Diamond"
       buy: 200
       sell: 150
       enchantment:
@@ -62,7 +67,7 @@ item:
     2:
       type: STAINED_CLAY
       data: 14
-      Displayname: "red clay"
+      DisplayName: "red clay"
       buy: 200
       sell: 150
       enchantment:
@@ -74,7 +79,7 @@ item:
     3:
       type: POTION
       data: 0
-      Displayname: "Water bottle"
+      DisplayName: "Water bottle"
       buy: 200
       sell: 150
       enchantment:
@@ -86,7 +91,7 @@ item:
     4:
       type: POTION
       data: 16452
-      Displayname: "splash poison potion"
+      DisplayName: "splash poison potion"
       buy: 200
       sell: 150
       enchantment:
@@ -98,7 +103,7 @@ item:
     5:
       type: WOOD
       data: 0
-      Displayname: "plank of wood"
+      DisplayName: "plank of wood"
       buy: 200
       sell: 150
       enchantment:
@@ -110,7 +115,7 @@ item:
     6:
       type: GRASS
       data: 0
-      Displayname: "Grass"
+      DisplayName: "Grass"
       enchantment:
         - ''
         - ''
@@ -120,7 +125,7 @@ item:
     7:
       type: 0
       data: 0
-      Displayname: ""
+      DisplayName: ""
       enchantment:
         - ''
         - ''
@@ -130,7 +135,7 @@ item:
     8:
       type: 0
       data: 0
-      Displayname: ""
+      DisplayName: ""
       enchantment:
         - ''
         - ''
@@ -140,7 +145,7 @@ item:
     9:
       type: 0
       data: 0
-      Displayname: ""
+      DisplayName: ""
       enchantment:
         - ''
         - ''
