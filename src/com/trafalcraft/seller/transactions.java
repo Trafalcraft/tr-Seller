@@ -69,7 +69,7 @@ class transactions {
                     p.getInventory().setItem(slot2, new ItemStack(Material.AIR));
                 }
                 if (slot <= 80 && slot >= sellerInventorySizeWithItems +1) {
-                    int slot2 = slot - sellerInventorySizeWithItems +1;
+                    int slot2 = slot - sellerInventorySizeWithItems -1;
                     p.getInventory().setItem(slot2, new ItemStack(Material.AIR));
                 }
                 return;

@@ -1,9 +1,8 @@
 name: seller
-version: 1.0.1
+version: 1.0.2
 description: Seller du spawn
 author: Amosar
 depend: [Vault, Citizens]
-Loadbefore: [Vault, Citizens]
 
 main: com.trafalcraft.seller.Main
 
