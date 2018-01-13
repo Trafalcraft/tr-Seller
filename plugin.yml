@@ -1,5 +1,5 @@
 name: seller
-version: 1.0.2
+version: 1.0.3
 description: Seller du spawn
 author: Amosar
 depend: [Vault, Citizens]

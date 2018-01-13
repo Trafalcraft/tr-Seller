@@ -1,4 +1,4 @@
-package com.trafalcraft.seller.inventaire;
+package com.trafalcraft.seller.inventory;
 
 import com.google.common.collect.Maps;
 

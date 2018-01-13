@@ -1,6 +1,6 @@
 package com.trafalcraft.seller;
 
-import com.trafalcraft.seller.fichier.FileManager;
+import com.trafalcraft.seller.file.FileManager;
 import com.trafalcraft.seller.util.Msg;
 import net.citizensnpcs.api.event.NPCRightClickEvent;
 import net.citizensnpcs.api.trait.Trait;
@@ -51,7 +51,7 @@ public class PlayerListener implements Listener {
                 }
                 Inventory inventory = Bukkit.createInventory(e.getClicker(), sellerInventorySizeWithItemsAndMenu, "§r§4§4" + Msg.SELLER_NAME + ">" + Type);
                 for (int f = 1; f <= sellerInventorySizeWithItemsAndMenu - 9; f++) {
-                    List<String> lore = new ArrayList<String>();
+                    List<String> lore = new ArrayList<>();
                     int purchase = yc.getInt("item.name." + f + ".buy");
                     int sale = yc.getInt("item.name." + f + ".sell");
                     if (purchase != 0) {
@@ -103,7 +103,7 @@ public class PlayerListener implements Listener {
                 /*ItemStack oldPage = new ItemStack(Material.SKULL_ITEM);
 		    	oldPage.setDurability((short) 3);
 		    	ItemMeta oldPageMeta = oldPage.getItemMeta();
-		    	oldPageMeta.setDisplayName("§aPage précedente");
+		    	oldPageMeta.setDisplayName("§aPrevious page");
 		    	((SkullMeta) oldPageMeta).setOwner("MHF_ArrowLeft");
 		    	oldPage.setItemMeta(oldPageMeta);
 		    	inventory.setItem(45, oldPage);*/
@@ -117,7 +117,7 @@ public class PlayerListener implements Listener {
 		    	/*ItemStack nextPage = new ItemStack(Material.SKULL_ITEM);
 		    	nextPage.setDurability((short) 3); 
 		    	SkullMeta nextPageMeta = (SkullMeta) nextPage.getItemMeta();
-		    	nextPageMeta.setDisplayName("§aPage suivante");
+		    	nextPageMeta.setDisplayName("§aNext page");
 		    	nextPageMeta.setOwner("MHF_ArrowRight");
 		    	nextPage.setItemMeta(nextPageMeta);
 			    inventory.setItem(53, nextPage);*/
@@ -156,25 +156,26 @@ public class PlayerListener implements Listener {
                     e.setCancelled(true);
                     return;
                 }
-                if (e.getRawSlot() == 45) {
+                switch (e.getRawSlot()) {
+                    case 45:
 
-                    e.setCancelled(true);
-                    return;
-                } else if (e.getRawSlot() == 49) {
-                    p.closeInventory();
-                    e.setCancelled(true);
-                    return;
-                } else if (e.getRawSlot() == 53) {
+                        e.setCancelled(true);
+                        return;
+                    case 49:
+                        p.closeInventory();
+                        e.setCancelled(true);
+                        return;
+                    case 53:
 
-                    e.setCancelled(true);
-                    return;
+                        e.setCancelled(true);
+                        return;
                 }
                 if (e.isRightClick()) {
                     e.setCancelled(true);
                     return;
                 }
                 if (e.isLeftClick()) {
-                    transactions t = new transactions();
+                    Transactions t = new Transactions();
                     t.sell(item, (Player) e.getWhoClicked(), e.getRawSlot(), e.getInventory().getTitle().split(">")[e.getInventory().getTitle().split(">").length - 1]);
                 }
                 e.setCancelled(true);
@@ -182,7 +183,7 @@ public class PlayerListener implements Listener {
             } else {
                 //Purchase
                 e.setCancelled(true);
-                transactions t = new transactions();
+                Transactions t = new Transactions();
                 if (e.isShiftClick()) {
                     t.buy(item, p, e.getRawSlot(), 64, bs, e.getInventory().getTitle().split(">")[e.getInventory().getTitle().split(">").length - 1]);
                 } else if (e.isRightClick()) {

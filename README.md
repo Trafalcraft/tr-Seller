@@ -1,2 +1,2 @@
 # tr-Seller
-Seller plugin for minecraft
+Seller plugin for Minecraft

@@ -1,7 +1,6 @@
 package com.trafalcraft.seller;
 
-
-import com.trafalcraft.seller.fichier.FileManager;
+import com.trafalcraft.seller.file.FileManager;
 import com.trafalcraft.seller.util.Msg;
 import com.trafalcraft.seller.util.MyTrait;
 import net.citizensnpcs.api.CitizensAPI;
@@ -12,6 +11,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.yaml.snakeyaml.error.YAMLException;
@@ -85,30 +85,48 @@ public class Main extends JavaPlugin{
                 if(args[0].equalsIgnoreCase("help")){
                     Msg.sendHelp(p);
                 }else if (args[0].equalsIgnoreCase("reload")) {
-                    plugin.reloadConfig();
-                    Msg.load();
-                    p.sendMessage("§areload success");
-                    return true;
+                        plugin.reloadConfig();
+                        Msg.load();
+                        FileManager.clear();
+                        FileManager.loadAllFile();
+                        p.sendMessage("§a reload success");
+                        return true;
+                } else if (args[0].equalsIgnoreCase("updateInventory")) {
+                        FileManager.clear();
+                        FileManager.loadAllFile();
+                        p.sendMessage("§aNPC inventory updated");
+                        return true;
                 }else if(args[0].equalsIgnoreCase("addType")){
-                    FileManager.addFile(plugin.getDataFolder(), args[1]);
-                    sender.sendMessage("The file "+args[1]+" was created");//Le fichier "+args[1]+" a bien été crée
+                        FileManager.addFile(plugin.getDataFolder(), args[1]);
+                        sender.sendMessage("The file " + args[1] + " was created");
                 }else if(args[0].equalsIgnoreCase("removeType")){
-                    FileManager.removeFile(args[1]);
-                    sender.sendMessage("The file "+args[1]+" was removed");//a bien été supprimé
+                        FileManager.removeFile(args[1]);
+                        sender.sendMessage("The file " + args[1] + " was removed");
                 }else if(args[0].equalsIgnoreCase("typeList")){
-                    StringBuilder msg = new StringBuilder("Differents types of NPCs are : ");//Les differents types de npc sont
-                    for(String yc : FileManager.getAllName()){
-                        msg.append(yc).append(", ");
-                    }
-                    msg = new StringBuilder(msg.substring(0, msg.length() - 2));
-                    sender.sendMessage(ChatColor.GOLD+ msg.toString());
+                        StringBuilder msg = new StringBuilder("Different types of NPCs are : ");
+                        for (String yc : FileManager.getAllName()) {
+                                msg.append(yc).append(", ");
+                        }
+                        msg = new StringBuilder(msg.substring(0, msg.length() - 2));
+                        sender.sendMessage(ChatColor.GOLD + msg.toString());
                 }else if(args[0].equalsIgnoreCase("getMaterial")){
-                    p.sendMessage("Type:"+p.getInventory().getItemInMainHand().getType());
-                    p.sendMessage("Durability"+p.getInventory().getItemInMainHand().getDurability());
-                    p.sendMessage("Enchantments:"+p.getInventory().getItemInMainHand().getEnchantments());
-                    //p.getInventory().getItemInMainHand().addUnsafeEnchantment(Enchantment.KNOCKBACK, 20);
+                        ItemStack item = p.getInventory().getItemInMainHand();
+                        p.sendMessage("Type: " + item.getType());
+                        p.sendMessage("Durability: " + item.getDurability());
+                        p.sendMessage("Enchantments: " + item.getEnchantments());
+                        //p.getInventory().getItemInMainHand().addUnsafeEnchantment(Enchantment.KNOCKBACK, 20);
+                /*}else if(args[0].equalsIgnoreCase("saveInventory")){
+                    File file = new File(Main.getPlugin().getDataFolder() + "//shops//", p.getDisplayName() + ".yml");
+                    YamlConfiguration yc = YamlConfiguration.loadConfiguration(file);
+                    yc.set("inv.itemInhand",p.getInventory().getItemInMainHand());
+                    yc.set("inv.content",p.getInventory().getContents());
+                    try {
+                        yc.save(file);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }*/
                 }else{
-                    Msg.sendHelp(p);
+                        Msg.sendHelp(p);
                 }
 	        	  /*else if(args[0].equalsIgnoreCase("testBlock")){
 	        	  Block b = Bukkit.getWorld("world").getBlockAt(p.getLocation());

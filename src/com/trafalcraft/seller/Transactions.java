@@ -1,20 +1,20 @@
 package com.trafalcraft.seller;
 
-import com.trafalcraft.seller.fichier.FileManager;
+import com.trafalcraft.seller.file.FileManager;
 import com.trafalcraft.seller.util.Msg;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-class transactions {
+class Transactions {
 
     private int sellerInventorySizeWithItems = 44;
 
-    public void buy(ItemStack item, Player p, int slot, int amount, double moneyP, String Type) {
-        YamlConfiguration yamlShop = FileManager.getShop(Type);
+        public void buy(ItemStack item, Player p, int slot, int amount, double moneyP, String type) {
+                YamlConfiguration yamlShop = FileManager.getShop(type);
         if (item.getType() == Material.AIR || amount < 1) {
-            return;
+                return;
         }
         for (int i = 1; i < sellerInventorySizeWithItems; i++) {
             if (yamlShop.getString("item.name." + i + ".type") != null &&

@@ -1,4 +1,4 @@
-package com.trafalcraft.seller.inventaire;
+package com.trafalcraft.seller.inventory;
 
 import org.bukkit.inventory.ItemStack;
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Inventory {
 
-    private final ArrayList<ItemStack> inventory = new ArrayList<ItemStack>();
+    private final ArrayList<ItemStack> inventory = new ArrayList<>();
 
     public void addItemToInventory(ItemStack item) {
         inventory.add(item);

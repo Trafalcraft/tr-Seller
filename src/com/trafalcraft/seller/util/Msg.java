@@ -100,7 +100,7 @@ public enum Msg {
         SELLER_NAME.replaceBy(Main.getPlugin().getConfig().getString("Complement.seller_name").replace("&", "§"));
         //sellerInteract
         NO_SHOP.replaceBy(Main.getPlugin().getConfig().getString("Msg.sellerInteract.noShop").replace("&", "§"));
-        //inventaire vendeur
+        //inventory vendeur
         BUY_PRICE.replaceBy(Main.getPlugin().getConfig().getString("Msg.sellerInventory.buy_price").replace("&", "§"));
         SELLER_PRICE.replaceBy(Main.getPlugin().getConfig().getString("Msg.sellerInventory.seller_price").replace("&", "§"));
         LEFT_CLICK.replaceBy(Main.getPlugin().getConfig().getString("Msg.sellerInventory.left_click").replace("&", "§"));
