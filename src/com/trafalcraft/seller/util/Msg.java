@@ -86,6 +86,7 @@ public enum Msg {
         sender.sendMessage("§3/seller removeType <type> - Remove a type of seller and remove this file.");
         sender.sendMessage("§3/seller typeList §b- List the types of seller.");
         sender.sendMessage("§3/seller getMaterial §b- Retrieve the \"Bukkit\" value of the item.");
+            sender.sendMessage("§3/seller updateInventory §b- Update NPC inventory from file.");
         sender.sendMessage("§3/seller reload - to reload the config file");
         sender.sendMessage("§3------------------------------------------------");
         sender.sendMessage("");
