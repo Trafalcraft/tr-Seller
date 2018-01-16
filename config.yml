@@ -60,15 +60,15 @@ page:
           ==: org.bukkit.inventory.ItemStack
           type: CARPET
           damage: 2
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 100
+        sell: 10
       '1':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
           type: CARPET
           damage: 3
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 100
+        sell: 10
       '9':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
@@ -78,7 +78,7 @@ page:
             meta-type: SPAWN_EGG
             internal: H4sIAAAAAAAAAONiYOBi4HTNK8ksqQxJTOdgYMpMYeDPzcxLTS5KTCuxKi4pSqxkYAAAy5jlZycAAAA=
             id: stray
-        buy: UNDEFINED
+        buy: 5000
         sell: UNDEFINED
       '10':
         itemStack:
@@ -89,7 +89,7 @@ page:
             meta-type: SPAWN_EGG
             internal: H4sIAAAAAAAAAONiYOBi4HTNK8ksqQxJTOdgYMpMYRDPzcxLTS5KTCuxqsrPTcpMjS/ITM9NzGNgAACmvRWELwAAAA==
             id: zombie_pigman
-        buy: UNDEFINED
+        buy: 5000
         sell: UNDEFINED
       '18':
         itemStack:
@@ -100,7 +100,7 @@ page:
             meta-type: ENCHANTED
             stored-enchants:
               MENDING: 1
-        buy: UNDEFINED
+        buy: 1000
         sell: UNDEFINED
       '19':
         itemStack:
@@ -111,7 +111,7 @@ page:
             meta-type: ENCHANTED
             stored-enchants:
               VANISHING_CURSE: 1
-        buy: UNDEFINED
+        buy: 1000
         sell: UNDEFINED
       '20':
         itemStack:
@@ -122,7 +122,7 @@ page:
             meta-type: ENCHANTED
             stored-enchants:
               KNOCKBACK: 2
-        buy: UNDEFINED
+        buy: 1000
         sell: UNDEFINED
       '27':
         itemStack:
@@ -137,22 +137,22 @@ page:
               FIRE_ASPECT: 2
               MENDING: 1
             repair-cost: 15
-        buy: UNDEFINED
+        buy: 10000
         sell: UNDEFINED
       '36':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
           type: BANNER
           damage: 13
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 200
+        sell: 100
       '37':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
           type: BANNER
           damage: 14
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 200
+        sell: 100
       '6':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
@@ -161,8 +161,8 @@ page:
             ==: ItemMeta
             meta-type: POTION
             potion-type: minecraft:long_regeneration
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 300
+        sell: 50
       '7':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
@@ -171,8 +171,8 @@ page:
             ==: ItemMeta
             meta-type: POTION
             potion-type: minecraft:night_vision
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 300
+        sell: 50
       '8':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
@@ -181,8 +181,8 @@ page:
             ==: ItemMeta
             meta-type: POTION
             potion-type: minecraft:water_breathing
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 300
+        sell: 50
       '16':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
@@ -191,8 +191,8 @@ page:
             ==: ItemMeta
             meta-type: POTION
             potion-type: minecraft:swiftness
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 300
+        sell: 50
       '17':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
@@ -201,8 +201,8 @@ page:
             ==: ItemMeta
             meta-type: POTION
             potion-type: minecraft:strong_regeneration
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 300
+        sell: 50
       '25':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
@@ -211,8 +211,8 @@ page:
             ==: ItemMeta
             meta-type: POTION
             potion-type: minecraft:strong_harming
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 300
+        sell: 50
       '26':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
@@ -221,8 +221,8 @@ page:
             ==: ItemMeta
             meta-type: POTION
             potion-type: minecraft:long_fire_resistance
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 300
+        sell: 50
       '22':
         itemStack:
           ==: org.bukkit.inventory.ItemStack
@@ -246,7 +246,7 @@ page:
             - ==: Pattern
               color: RED
               pattern: tl
-        buy: UNDEFINED
+        buy: 10000
         sell: UNDEFINED
   '2':
     item:
@@ -254,5 +254,5 @@ page:
         itemStack:
           ==: org.bukkit.inventory.ItemStack
           type: NAME_TAG
-        buy: UNDEFINED
-        sell: UNDEFINED
+        buy: 900
+        sell: 10
