@@ -1,4 +1,4 @@
-version: 0.1
+version: 0.2
 Complement:
   seller_name: "Seller"
 Msg:
@@ -17,6 +17,8 @@ Msg:
     shift_click: "Shift+click"
     buy_item: "buy $nbr items"
     leave_the_shop: "Leave the shop"
+    next_page_of_shop: "Next page"
+    previous_page_of_shop: "Previous page"
     buy_unavailable_inventory: "&3You can't buy this item"
     sell_unavailable_inventory: "&3You can't sell this item"
   transaction:
@@ -48,108 +50,209 @@ Msg:
       - "&3You can't sell this item"
       - "&a===================================================="
       
-#exemple shop
-version: '0.1'
-item:
-  name:
-    1:
-      type: DIAMOND
-      data: 0
-      DisplayName: "Diamond"
-      buy: 200
-      sell: 150
-      enchantment:
-        - ''
-        - ''
-      lore:
-        - ''
-        - ''
-    2:
-      type: STAINED_CLAY
-      data: 14
-      DisplayName: "red clay"
-      buy: 200
-      sell: 150
-      enchantment:
-        - ''
-        - ''
-      lore:
-        - ''
-        - ''
-    3:
-      type: POTION
-      data: 0
-      DisplayName: "Water bottle"
-      buy: 200
-      sell: 150
-      enchantment:
-        - ''
-        - ''
-      lore:
-        - ''
-        - ''
-    4:
-      type: POTION
-      data: 16452
-      DisplayName: "splash poison potion"
-      buy: 200
-      sell: 150
-      enchantment:
-        - ''
-        - ''
-      lore:
-        - ''
-        - ''
-    5:
-      type: WOOD
-      data: 0
-      DisplayName: "plank of wood"
-      buy: 200
-      sell: 150
-      enchantment:
-        - ''
-        - ''
-      lore:
-        - ''
-        - ''
-    6:
-      type: GRASS
-      data: 0
-      DisplayName: "Grass"
-      enchantment:
-        - ''
-        - ''
-      lore:
-        - ''
-        - ''
-    7:
-      type: 0
-      data: 0
-      DisplayName: ""
-      enchantment:
-        - ''
-        - ''
-      lore:
-        - ''
-        - ''
-    8:
-      type: 0
-      data: 0
-      DisplayName: ""
-      enchantment:
-        - ''
-        - ''
-      lore:
-        - ''
-        - ''
-    9:
-      type: 0
-      data: 0
-      DisplayName: ""
-      enchantment:
-        - ''
-        - ''
-      lore:
-        - ''
-        - ''
-        
+#exemple of shop
+version: '1.0'
+page:
+  '1':
+    item:
+      '0':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: CARPET
+          damage: 2
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '1':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: CARPET
+          damage: 3
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '9':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: MONSTER_EGG
+          meta:
+            ==: ItemMeta
+            meta-type: SPAWN_EGG
+            internal: H4sIAAAAAAAAAONiYOBi4HTNK8ksqQxJTOdgYMpMYeDPzcxLTS5KTCuxKi4pSqxkYAAAy5jlZycAAAA=
+            id: stray
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '10':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: MONSTER_EGG
+          meta:
+            ==: ItemMeta
+            meta-type: SPAWN_EGG
+            internal: H4sIAAAAAAAAAONiYOBi4HTNK8ksqQxJTOdgYMpMYRDPzcxLTS5KTCuxqsrPTcpMjS/ITM9NzGNgAACmvRWELwAAAA==
+            id: zombie_pigman
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '18':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              MENDING: 1
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '19':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              VANISHING_CURSE: 1
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '20':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              KNOCKBACK: 2
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '27':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: DIAMOND_SWORD
+          meta:
+            ==: ItemMeta
+            meta-type: UNSPECIFIC
+            enchants:
+              DAMAGE_ALL: 5
+              DURABILITY: 3
+              FIRE_ASPECT: 2
+              MENDING: 1
+            repair-cost: 15
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '36':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: BANNER
+          damage: 13
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '37':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: BANNER
+          damage: 14
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '6':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: POTION
+          meta:
+            ==: ItemMeta
+            meta-type: POTION
+            potion-type: minecraft:long_regeneration
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '7':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: POTION
+          meta:
+            ==: ItemMeta
+            meta-type: POTION
+            potion-type: minecraft:night_vision
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '8':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: POTION
+          meta:
+            ==: ItemMeta
+            meta-type: POTION
+            potion-type: minecraft:water_breathing
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '16':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: SPLASH_POTION
+          meta:
+            ==: ItemMeta
+            meta-type: POTION
+            potion-type: minecraft:swiftness
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '17':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: SPLASH_POTION
+          meta:
+            ==: ItemMeta
+            meta-type: POTION
+            potion-type: minecraft:strong_regeneration
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '25':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: LINGERING_POTION
+          meta:
+            ==: ItemMeta
+            meta-type: POTION
+            potion-type: minecraft:strong_harming
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '26':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: LINGERING_POTION
+          meta:
+            ==: ItemMeta
+            meta-type: POTION
+            potion-type: minecraft:long_fire_resistance
+        buy: UNDEFINED
+        sell: UNDEFINED
+      '22':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: BANNER
+          damage: 14
+          meta:
+            ==: ItemMeta
+            meta-type: BANNER
+            display-name: The Master Banner
+            lore:
+            - An incredible banner with great power
+            enchants:
+              DAMAGE_ALL: 10
+              DURABILITY: 3
+              FIRE_ASPECT: 2
+              MENDING: 1
+            patterns:
+            - ==: Pattern
+              color: RED
+              pattern: br
+            - ==: Pattern
+              color: RED
+              pattern: tl
+        buy: UNDEFINED
+        sell: UNDEFINED
+  '2':
+    item:
+      '22':
+        itemStack:
+          ==: org.bukkit.inventory.ItemStack
+          type: NAME_TAG
+        buy: UNDEFINED
+        sell: UNDEFINED
