@@ -53,21 +53,23 @@ public class PlayerListener implements Listener {
                         int purchase = yc.getInt("page." + pageNumber + ".item." + itemPos + ".buy");
                         int sale = yc.getInt("page." + pageNumber + ".item." + itemPos + ".sell");
                         if (purchase != 0) {
-                                lore.add(Msg.BUY_PRICE + ": §6" + Main.getEcon().format(purchase));
+                            lore.add(Msg.BUY_PRICE.toString()
+                                    .replace("$price", Main.getEcon().format(purchase)));
                         } else {
                                 lore.add(Msg.BUY_UNAVAILABLE_INVENTORY.toString());
                         }
                         if (sale != 0) {
-                                lore.add(Msg.SELLER_PRICE + ": §6" + Main.getEcon().format(sale));
+                            lore.add(Msg.SELLER_PRICE.toString()
+                                    .replace("$price", Main.getEcon().format(sale)));
                         } else {
                                 lore.add(Msg.SELL_UNAVAILABLE_INVENTORY.toString());
                         }
                         lore.add("");
-                        lore.add("§6" + Msg.LEFT_CLICK + ": ");
+                    lore.add(Msg.LEFT_CLICK + ": ");
                         lore.add(Msg.BUY_ITEM.toString().replace("$nbr", "1") + ": ");
-                        lore.add("§6" + Msg.RIGHT_CLICK + ": ");
+                    lore.add(Msg.RIGHT_CLICK + ": ");
                         lore.add(Msg.BUY_ITEM.toString().replace("$nbr", "8") + ": ");
-                        lore.add("§6" + Msg.SHIFT_CLICK + ": ");
+                    lore.add(Msg.SHIFT_CLICK + ": ");
                         lore.add(Msg.BUY_ITEM.toString().replace("$nbr", "64") + ": ");
                         ItemStack item;
                         Object itemTest = yc.get("page." + pageNumber + ".item." + itemPos + ".itemStack");

@@ -36,6 +36,7 @@ public class Main extends JavaPlugin {
         public void onEnable() {
 
                 plugin = this;
+            plugin.saveDefaultConfig();
                 plugin.getConfig().options().copyDefaults(true);
                 plugin.saveConfig();
                 plugin.reloadConfig();
@@ -93,12 +94,12 @@ public class Main extends JavaPlugin {
                                         Msg.load();
                                         FileManager.clear();
                                         FileManager.loadAllFile();
-                                        p.sendMessage("§a reload success");
+                                    p.sendMessage(Msg.RELOAD.toString());
                                         return true;
                                 } else if (args[0].equalsIgnoreCase("updateAllShops")) {
                                         FileManager.clear();
                                         FileManager.loadAllFile();
-                                        p.sendMessage("§aNPCs inventory updated");
+                                    p.sendMessage(Msg.COMMAND_UPDATE_ALL_SHOPS.toString());
                                         return true;
                                 } else if (args[0].equalsIgnoreCase("manageShop")) {
                                         if (args.length > 1) {
@@ -109,16 +110,19 @@ public class Main extends JavaPlugin {
                                 } else if (args[0].equalsIgnoreCase("removeShop")) {
                                         if (args.length > 1) {
                                                 FileManager.removeFile(args[1]);
-                                                sender.sendMessage("The file " + args[1] + " was removed");
+                                            sender.sendMessage(Msg.COMMAND_REMOVE_SHOP.toString()
+                                                    .replace("$fileName", args[1]));
                                         } else {
                                                 sender.sendMessage("Usage: /seller removeShop <type>");
                                         }
                                 } else if (args[0].equalsIgnoreCase("shopList")) {
-                                        StringBuilder msg = new StringBuilder("Different types of NPCs are : ");
+                                    StringBuilder msg = new StringBuilder();
                                         for (String yc : FileManager.getAllName()) {
                                                 msg.append(yc).append(", ");
                                         }
                                         msg = new StringBuilder(msg.substring(0, msg.length() - 2));
+                                    msg = new StringBuilder(Msg.COMMAND_SHOP_LIST.toString()
+                                            .replace("$shopList", msg));
                                         sender.sendMessage(ChatColor.GOLD + msg.toString());
                                 } else {
                                         Msg.sendHelp(p);

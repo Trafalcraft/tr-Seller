@@ -33,25 +33,25 @@ public class SetupInventoryManage {
                 if (pageNumber != 1) {
                         ItemStack oldPage = new ItemStack(Material.ARROW);
                         ItemMeta oldPageMeta = oldPage.getItemMeta();
-                        oldPageMeta.setDisplayName("§aPrevious page");
+                    oldPageMeta.setDisplayName(Msg.PREVIOUS_PAGE_OF_SHOP.toString());
                         oldPage.setItemMeta(oldPageMeta);
                         inventory.setItem(47, oldPage);
                 }
                 ItemStack save = new ItemStack(Material.STAINED_CLAY);
                 save.setDurability((short) 13);
                 ItemMeta saveMeta = save.getItemMeta();
-                saveMeta.setDisplayName("§aSave");
+            saveMeta.setDisplayName(Msg.SAVE_SHOP.toString());
                 save.setItemMeta(saveMeta);
                 inventory.setItem(48, save);
                 ItemStack close = new ItemStack(Material.STAINED_CLAY);
                 close.setDurability((short) 14);
                 ItemMeta closeMeta = close.getItemMeta();
-                closeMeta.setDisplayName("§4Cancel");
+            closeMeta.setDisplayName(Msg.CANCEL_SHOP.toString());
                 close.setItemMeta(closeMeta);
                 inventory.setItem(50, close);
                 ItemStack nextPage = new ItemStack(Material.ARROW);
                 ItemMeta nextPageMeta = nextPage.getItemMeta();
-                nextPageMeta.setDisplayName("§aNext page");
+            nextPageMeta.setDisplayName(Msg.NEXT_PAGE_OF_SHOP.toString());
                 nextPage.setItemMeta(nextPageMeta);
                 inventory.setItem(51, nextPage);
                 p.openInventory(inventory);

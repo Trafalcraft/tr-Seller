@@ -12,11 +12,11 @@ Msg:
   sellerInteract:
     noShop: "The seller have a problem or is closed"
   sellerInventory:
-    buy_price: "Buying price"
-    seller_price: "Selling price"
-    left_click: "Left click"
-    right_click: "Right click"
-    shift_click: "Shift+click"
+    buy_price: "Buying price : &6 $price"
+    seller_price: "Selling price : &6 $price"
+    left_click: "&6Left click"
+    right_click: "&6Right click"
+    shift_click: "&6Shift+click"
     buy_item: "buy $nbr items"
     leave_the_shop: "Leave the shop"
     next_page_of_shop: "Next page"
@@ -51,3 +51,20 @@ Msg:
       - "&a===================================================="
       - "&3You can't sell this item"
       - "&a===================================================="
+  admin:
+    reload: "&a reload success"
+    help:
+      header: "&3&l-------------------Seller-------------------"
+      footer: "&3------------------------------------------------"
+      manageShop: "&3/seller manageShop <Type> &b- Manage a shop and create his file."
+      removeShop: "&3/seller removeShop <type> - Remove a shop and remove his file."
+      typeList: "&3/seller typeList &b- List the shops."
+      updateAllShops: "&3/seller updateAllShops &b- Update all shops from file."
+      reload: "&3/seller reload - to reload the config file"
+    manageShop:
+      save_button: "&aSave"
+      cancel_button: "&4Cancel"
+    command:
+      updateAllShops: "&aNPCs inventory updated"
+      removeShop: "The file $fileName was removed"
+      shopList: "Different types of NPCs are : $shopList"
